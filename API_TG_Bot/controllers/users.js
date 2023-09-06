@@ -1,24 +1,43 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
 
-const createUser = (req, res) => {
+const BadRequestErr = require('../errors/BadRequestErr');
+const ConflictErr = require('../errors/ConflictErr');
+
+const createUser = (req, res, next) => {
   const { email, firstName } = req.body;
   User.create({ email, firstName })
     .then(user => res.send({ data: user }))
-    .catch(err => res.status(500).send({ message: 'Произошла ошибка' }));
-//     .catch ((err) => {
-//   if (err instanceof mongoose.Error.ValidationError) {
-//     next(new BadRequestErr('Ошибка валидации'));
-//     return;
-//   }
-//   if (err.code === 11000) {
-//     next(new ConflictErr('Пользователь с таким email уже существует'));
-//     return;
-//   }
-//   res.status(500).send({ message: 'Произошла ошибка' });
-// });
+    .catch ((err) => {
+  if (err instanceof mongoose.Error.ValidationError) {
+    next(new BadRequestErr('Ошибка валидации'));
+    return;
+  }
+  if (err.code === 11000) {
+    next(new ConflictErr('Пользователь с таким email уже существует'));
+    return;
+  }
+  res.status(500).send({ message: 'Произошла ошибка' });
+});
 }
 
+const updateUser = (req, res, next) => {
+  User.findByIdAndUpdate(req.body._id, req.body, { new: true, runValidators: true })
+    .then((user) => res.send(user))
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        next(new BadRequestErr('Ошибка валидации'));
+        return;
+      }
+      if (err.code === 11000) {
+        next(new ConflictErr('Пользователь с таким email уже существует'));
+        return;
+      }
+      next(err);
+    });
+};
+
 module.exports = {
-  createUser
+  createUser,
+  updateUser
 }
