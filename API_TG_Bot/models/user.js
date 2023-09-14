@@ -15,9 +15,38 @@ const userSchema = new mongoose.Schema(
         return false;
       },
     },
+    gender: {
+      type: String,
+      enum: ['м', 'ж'],
+    },
+    age: {
+      type: Number,
+    },
+    city: {
+      type: String,
+    },
     firstName: {
       type: String,
-      required: true,
+    },
+    eveningConversationTime: {
+      hour: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 23;
+          },
+          message: 'Введите значение от 0 до 23',
+        },
+      },
+      minutes: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 60;
+          },
+          message: 'Введите значение от 0 до 60',
+        },
+      }
     },
   },
   {
