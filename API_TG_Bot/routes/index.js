@@ -6,7 +6,7 @@ const auth = require('../middlewares/auth');
 router.post('/signin', login);
 router.post('/signup', createAdmin);
 
-// router.use(auth);
+router.use(auth);
 
 router.post('/users/signup', createUser);
 router.post('/users/update', updateUser);
