@@ -36,12 +36,8 @@ const login = (req, res, next) => {
     const { name, password } = req.body;
     return Admin.findAdminByCredentials(name, password)
         .then((admin) => {
-            const token = jwt.sign({ _id: admin._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
-            res.cookie('jwt', token, {
-                maxAge: 3600000 * 24 * 7,
-                httpOnly: true,
-            })
-                .send({ message: 'Токен сохранен в куки' });
+            const token = jwt.sign({ _id: admin._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
+            res.send({token});
         })
         .catch(next);
 };
