@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema(
     firstName: {
       type: String,
     },
-    eveningConversationTime: {
+    eveningTime: {
       hour: {
         type: Number,
         validate: {
@@ -44,7 +44,47 @@ const userSchema = new mongoose.Schema(
           validator(v) {
             return v <= 60;
           },
-          message: 'Введите значение от 0 до 60',
+          message: 'Введите значение от 0 до 59',
+        },
+      }
+    },
+    bedTime: {
+      hour: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 23;
+          },
+          message: 'Введите значение от 0 до 23',
+        },
+      },
+      minutes: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 60;
+          },
+          message: 'Введите значение от 0 до 59',
+        },
+      }
+    },
+    wakeUpTime: {
+      hour: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 23;
+          },
+          message: 'Введите значение от 0 до 23',
+        },
+      },
+      minutes: {
+        type: Number,
+        validate: {
+          validator(v) {
+            return v <= 60;
+          },
+          message: 'Введите значение от 0 до 59',
         },
       }
     },
