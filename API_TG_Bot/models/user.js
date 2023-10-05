@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-
 const userSchema = new mongoose.Schema(
   {
     email: {
@@ -28,65 +27,111 @@ const userSchema = new mongoose.Schema(
     firstName: {
       type: String,
     },
-    eveningTime: {
-      hour: {
+    // eveningTime: {
+    //   hour: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 23;
+    //       },
+    //       message: 'Введите значение от 0 до 23',
+    //     },
+    //   },
+    //   minutes: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 60;
+    //       },
+    //       message: 'Введите значение от 0 до 59',
+    //     },
+    //   }
+    // },
+    // bedTime: {
+    //   hour: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 23;
+    //       },
+    //       message: 'Введите значение от 0 до 23',
+    //     },
+    //   },
+    //   minutes: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 60;
+    //       },
+    //       message: 'Введите значение от 0 до 59',
+    //     },
+    //   }
+    // },
+    // wakeUpTime: {
+    //   hour: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 23;
+    //       },
+    //       message: 'Введите значение от 0 до 23',
+    //     },
+    //   },
+    //   minutes: {
+    //     type: Number,
+    //     validate: {
+    //       validator(v) {
+    //         return v <= 60;
+    //       },
+    //       message: 'Введите значение от 0 до 59',
+    //     },
+    //   }
+    // },
+    graphStatus: {
+      dayOne: {
         type: Number,
-        validate: {
-          validator(v) {
-            return v <= 23;
-          },
-          message: 'Введите значение от 0 до 23',
-        },
       },
-      minutes: {
+      dayTwo: {
         type: Number,
-        validate: {
-          validator(v) {
-            return v <= 60;
-          },
-          message: 'Введите значение от 0 до 59',
-        },
-      }
+      },
+      dayThree: {
+        type: Number,
+      },
+      dayFour: {
+        type: Number,
+      },
+      dayFive: {
+        type: Number,
+      },
+      daySix: {
+        type: Number,
+      },
+      daySeven: {
+        type: Number,
+      },
     },
-    bedTime: {
-      hour: {
-        type: Number,
-        validate: {
-          validator(v) {
-            return v <= 23;
-          },
-          message: 'Введите значение от 0 до 23',
-        },
+    events: {
+      dayOne: {
+        type: String,
       },
-      minutes: {
-        type: Number,
-        validate: {
-          validator(v) {
-            return v <= 60;
-          },
-          message: 'Введите значение от 0 до 59',
-        },
-      }
-    },
-    wakeUpTime: {
-      hour: {
-        type: Number,
-        validate: {
-          validator(v) {
-            return v <= 23;
-          },
-          message: 'Введите значение от 0 до 23',
-        },
+      dayTwo: {
+        type: String,
       },
-      minutes: {
-        type: Number,
-        validate: {
-          validator(v) {
-            return v <= 60;
-          },
-          message: 'Введите значение от 0 до 59',
-        },
-      }
+      dayThree: {
+        type: String,
+      },
+      dayFour: {
+        type: String,
+      },
+      dayFive: {
+        type: String,
+      },
+      daySix: {
+        type: String,
+      },
+      daySeven: {
+        type: String,
+      },
     },
   },
   {

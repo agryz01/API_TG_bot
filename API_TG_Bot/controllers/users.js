@@ -8,7 +8,7 @@ const NotFoundErr = require('../errors/NotFoundErr');
 const createUser = (req, res, next) => {
   const { email, firstName } = req.body;
   User.create({ email, firstName })
-    .then(user => res.send({ data: user }))
+    .then(user => res.send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         next(new BadRequestErr('Ошибка валидации'));
@@ -38,7 +38,14 @@ const updateUser = (req, res, next) => {
     });
 };
 
+const getUserMe = (req, res, next) => {
+  User.findById(req.params.userId).orFail(new NotFoundErr('Запись с указанным _id не найдена'))
+    .then(user => res.send(user))
+    .catch(next);
+};
+
 module.exports = {
   createUser,
-  updateUser
+  updateUser,
+  getUserMe
 }

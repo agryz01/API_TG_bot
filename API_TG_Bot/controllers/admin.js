@@ -37,13 +37,13 @@ const login = (req, res, next) => {
     return Admin.findAdminByCredentials(name, password)
         .then((admin) => {
             const token = jwt.sign({ _id: admin._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
-            res.send({token});
+            res.send({ token });
         })
         .catch(next);
 };
 
 const logout = (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Куки авторизации удалены' });
+    res.clearCookie('jwt').send({ message: 'Куки авторизации удалены' });
 };
 
 
