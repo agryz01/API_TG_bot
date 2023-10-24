@@ -18,7 +18,8 @@ app.use(cookieParser());
 mongoose.connect(MONGODB_URL);
 
 const allowedCors = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://agryz.students.nomoredomains.icu'
   ];
   
   app.use((req, res, next) => {
