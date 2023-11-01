@@ -23,7 +23,7 @@ const createUser = (req, res, next) => {
 }
 
 const updateUser = (req, res, next) => {
-  User.findByIdAndUpdate(req.body._id, req.body, { new: true, runValidators: true }).orFail(new NotFoundErr('Запись с указанным _id не найдена'))
+  User.findByIdAndUpdate(req.params.userId, req.body, { new: true, runValidators: true }).orFail(new NotFoundErr('Запись с указанным _id не найдена'))
     .then((user) => res.send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {

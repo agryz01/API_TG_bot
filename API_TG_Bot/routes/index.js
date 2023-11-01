@@ -10,7 +10,7 @@ router.post('/signup', createAdmin);
 router.use(auth);
 
 router.post('/users', createUser);
-router.post('/users/update', updateUser);
+router.post('/users/update/:userId', updateUser);
 router.get('/users/:userId', getUserMe);
 
 router.post('/signout', logout);
