@@ -27,109 +27,187 @@ const userSchema = new mongoose.Schema(
     firstName: {
       type: String,
     },
-    // eveningTime: {
-    //   hour: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 23;
-    //       },
-    //       message: 'Введите значение от 0 до 23',
-    //     },
-    //   },
-    //   minutes: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 60;
-    //       },
-    //       message: 'Введите значение от 0 до 59',
-    //     },
-    //   }
-    // },
-    // bedTime: {
-    //   hour: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 23;
-    //       },
-    //       message: 'Введите значение от 0 до 23',
-    //     },
-    //   },
-    //   minutes: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 60;
-    //       },
-    //       message: 'Введите значение от 0 до 59',
-    //     },
-    //   }
-    // },
-    // wakeUpTime: {
-    //   hour: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 23;
-    //       },
-    //       message: 'Введите значение от 0 до 23',
-    //     },
-    //   },
-    //   minutes: {
-    //     type: Number,
-    //     validate: {
-    //       validator(v) {
-    //         return v <= 60;
-    //       },
-    //       message: 'Введите значение от 0 до 59',
-    //     },
-    //   }
-    // },
     graphStatus: {
-      dayOne: {
+      day1: {
         type: Number,
       },
-      dayTwo: {
+      day2: {
         type: Number,
       },
-      dayThree: {
+      day3: {
         type: Number,
       },
-      dayFour: {
+      day4: {
         type: Number,
       },
-      dayFive: {
+      day5: {
         type: Number,
       },
-      daySix: {
+      day6: {
         type: Number,
       },
-      daySeven: {
+      day7: {
+        type: Number,
+      },
+      day8: {
+        type: Number,
+      },
+      day9: {
+        type: Number,
+      },
+      day10: {
+        type: Number,
+      },
+      day11: {
+        type: Number,
+      },
+      day12: {
+        type: Number,
+      },
+      day13: {
+        type: Number,
+      },
+      day14: {
+        type: Number,
+      },
+      day15: {
+        type: Number,
+      },
+      day16: {
+        type: Number,
+      },
+      day17: {
+        type: Number,
+      },
+      day18: {
+        type: Number,
+      },
+      day19: {
+        type: Number,
+      },
+      day20: {
+        type: Number,
+      },
+      day21: {
+        type: Number,
+      },
+      day22: {
+        type: Number,
+      },
+      day23: {
+        type: Number,
+      },
+      day24: {
+        type: Number,
+      },
+      day25: {
+        type: Number,
+      },
+      day26: {
+        type: Number,
+      },
+      day27: {
+        type: Number,
+      },
+      day28: {
+        type: Number,
+      },
+      day29: {
+        type: Number,
+      },
+      day30: {
         type: Number,
       },
     },
     events: {
-      dayOne: {
+      day1: {
         type: String,
       },
-      dayTwo: {
+      day2: {
         type: String,
       },
-      dayThree: {
+      day3: {
         type: String,
       },
-      dayFour: {
+      day4: {
         type: String,
       },
-      dayFive: {
+      day5: {
         type: String,
       },
-      daySix: {
+      day6: {
         type: String,
       },
-      daySeven: {
+      day7: {
+        type: String,
+      },
+      day8: {
+        type: String,
+      },
+      day9: {
+        type: String,
+      },
+      day10: {
+        type: String,
+      },
+      day11: {
+        type: String,
+      },
+      day12: {
+        type: String,
+      },
+      day13: {
+        type: String,
+      },
+      day14: {
+        type: String,
+      },
+      day15: {
+        type: String,
+      },
+      day16: {
+        type: String,
+      },
+      day17: {
+        type: String,
+      },
+      day18: {
+        type: String,
+      },
+      day19: {
+        type: String,
+      },
+      day20: {
+        type: String,
+      },
+      day21: {
+        type: String,
+      },
+      day22: {
+        type: String,
+      },
+      day23: {
+        type: String,
+      },
+      day24: {
+        type: String,
+      },
+      day25: {
+        type: String,
+      },
+      day26: {
+        type: String,
+      },
+      day27: {
+        type: String,
+      },
+      day28: {
+        type: String,
+      },
+      day29: {
+        type: String,
+      },
+      day30: {
         type: String,
       },
     },
