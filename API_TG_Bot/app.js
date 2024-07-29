@@ -23,7 +23,8 @@ mongoose.connect(MONGODB_URL);
 const allowedCors = [
   'http://localhost:3000',
   'http://agryz.students.nomoredomains.icu',
-  'http://bot.max26h.ru'
+  'http://bot.max26h.ru',
+  'http://easydreambot.ru'
 ];
 
 app.use((req, res, next) => {
